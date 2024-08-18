@@ -1,0 +1,9 @@
+inherit_from: .rubocop_todo.yml
+require:
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.7
+
+RSpec:
+  Enabled: true
