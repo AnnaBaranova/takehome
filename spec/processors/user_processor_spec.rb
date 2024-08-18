@@ -5,6 +5,8 @@ require_relative '../../helpers/data_validator'
 require_relative '../../models/user'
 require_relative '../../processors/user_processor'
 
+# Test suite for UserProcessor
+
 RSpec.describe UserProcessor do
   let(:users) do
     [

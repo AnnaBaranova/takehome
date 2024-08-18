@@ -3,6 +3,8 @@ require 'pathname'
 require_relative '../../helpers/file_helper'
 require_relative '../../helpers/error_helper'
 
+# Test suite for Helpers::FileHelper
+
 RSpec.describe Helpers::FileHelper do
   describe '.read_file' do
     let(:valid_file_path) { 'spec/fixtures/valid_file.txt' }

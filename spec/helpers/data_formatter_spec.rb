@@ -2,6 +2,8 @@ require 'rspec'
 require_relative '../../helpers/data_formatter'
 require_relative '../../helpers/error_helper'
 
+# Test suite for Helpers::DataFormatter
+
 RSpec.describe Helpers::DataFormatter do
   describe '.format_company_output' do
     subject(:output) { described_class.format_company_output(company_id, company_name, users_emailed, users_not_emailed, total_top_ups) }

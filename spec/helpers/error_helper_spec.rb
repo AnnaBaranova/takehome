@@ -1,6 +1,8 @@
 require 'rspec'
 require_relative '../../helpers/error_helper'
 
+# Test suite for Helpers::ErrorHelper
+
 RSpec.describe Helpers::ErrorHelper do
   describe '.handle_error' do
     let(:message) { 'An error occurred' }

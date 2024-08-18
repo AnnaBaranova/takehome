@@ -3,17 +3,25 @@ require_relative 'helpers/file_helper'
 require_relative 'processors/data_processor'
 require_relative 'helpers/error_helper'
 
+# Constants
 USERS_FILE = 'users.json'
 COMPANIES_FILE = 'companies.json'
 OUTPUT_FILE = 'output.txt'
 
+# Process the companies and users data - main method.
+# This method loads the companies and users data from JSON files,
+# processes the data, and writes the output to a file.
+# It handles any unexpected errors that occur during the process.
+#
+# @return [void]
+#
 
 
 def process_companies_users_data
   users = []
   companies = []
 
-  puts "Processing companies and users data".upcase
+  puts "Start the process".upcase
 
   # load data from JSON files
   begin
@@ -55,4 +63,5 @@ def process_companies_users_data
   puts "Process completed".upcase
 end
 
+# Call the main method to process the companies and users data
 process_companies_users_data

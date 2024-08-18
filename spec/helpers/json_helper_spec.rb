@@ -4,6 +4,8 @@ require_relative '../../helpers/json_helper'
 require_relative '../../helpers/file_helper'
 require_relative '../../helpers/error_helper'
 
+# Test suite for Helpers::JsonHelper
+
 RSpec.describe Helpers::JsonHelper do
   let(:base_dir) { Dir.pwd }
 

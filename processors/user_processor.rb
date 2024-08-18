@@ -3,10 +3,29 @@ require_relative '../helpers/data_formatter'
 require_relative '../helpers/data_validator'
 require_relative '../models/user'
 
+# UserProcessor class
+# 
+# The UserProcessor class is responsible for processing user data for a company.
+# 
+# Attributes:
+# - users [Array<Hash>]: The list of user data.
+# 
+# Methods:
+# - process_users_for_company: Processes the users for a company and formats the output.
+# 
+#
+
 class UserProcessor
   def initialize(users)
     @users = Helpers::DataValidator.validate_data_structure(users, 'users').sort_by { |user| user['last_name'] }
   end
+
+  # Process the users for a company and format the output
+  # @param company_id [Integer] the id of the company
+  # @param company_email_status [Boolean] the email status of the company
+  # @param top_up_amount [Integer] the top up amount for the company
+  # @return [Array<Hash>] the formatted user output
+  # @raise [StandardError] if an unexpected error occurs
 
   def process_users_for_company(company_id, company_email_status, top_up_amount)
     users_emailed = []
@@ -49,9 +68,19 @@ class UserProcessor
   end
 
   private
+
+    # Check if the user belongs to the company and is active
+    # @param user [Hash] the user data
+    # @param company_id [Integer] the id of the company
+    # @return [Boolean] true if the user belongs to the company and is active, false otherwise
     def is_company_user_active?(user, company_id)
       user['company_id'] == company_id && user['active_status']
     end
+
+    # Update the user balance
+    # @param previous_balance [Integer] the previous balance of the user
+    # @param top_up_amount [Integer] the top up amount for the user
+    # @return [Integer] the new balance of the user
 
     def update_user_balance(previous_balance, top_up_amount)
       previous_balance + top_up_amount

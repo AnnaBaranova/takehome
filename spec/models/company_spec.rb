@@ -2,6 +2,8 @@ require 'rspec'
 require_relative '../../models/company'
 require_relative '../../helpers/error_helper'
 
+# Test suite for Company model
+
 RSpec.describe Company, type: :model do
   describe '#initialize' do
     context 'with valid attributes' do

@@ -6,6 +6,8 @@ require_relative '../../processors/user_processor'
 require_relative '../../processors/company_processor'
 require_relative '../../processors/data_processor'
 
+# Test suite for DataProcessor
+
 RSpec.describe DataProcessor do
   let(:companies) do
     [

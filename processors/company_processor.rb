@@ -3,10 +3,27 @@ require_relative '../helpers/data_formatter'
 require_relative '../helpers/data_validator'
 require_relative '../models/company'
 
+# CompanyProcessor class
+# 
+# The CompanyProcessor class is responsible for processing company data along with the users that belong to the company.
+# 
+# Attributes:
+# - user_processor [UserProcessor]: The UserProcessor object used to process user data.
+# 
+# Methods:
+# - process_company_details: Processes the company data and formats the output.
+# 
+#
+
 class CompanyProcessor
   def initialize(user_processor)
     @user_processor = user_processor
   end
+
+  # Process the company data and format the output
+  # @param company [Hash] the company data
+  # @return [Array<String>] the formatted company output
+  # @raise [StandardError] if an unexpected error occurs
 
   def process_company_details(company)
     begin
@@ -26,8 +43,6 @@ class CompanyProcessor
       if users_emailed.empty? && users_not_emailed.empty?
         return nil
       end
-
-      # 
 
       # format the output
       Helpers::DataFormatter.format_company_output(company_id, company_name, users_emailed, users_not_emailed, total_top_ups)

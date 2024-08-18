@@ -2,6 +2,8 @@ require 'rspec'
 require_relative '../../models/user'
 require_relative '../../helpers/error_helper'
 
+# Test suite for User model
+
 RSpec.describe User, type: :model do
   let(:valid_attributes) do
     {

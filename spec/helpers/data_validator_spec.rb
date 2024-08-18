@@ -2,6 +2,8 @@ require 'rspec'
 require_relative '../../helpers/data_validator'
 require_relative '../../helpers/error_helper'
 
+# Test suite for Helpers::DataValidator
+
 RSpec.describe Helpers::DataValidator do
   describe '.validate_data_structure' do
     let(:valid_data) { [{ key: 'value' }, { key: 'value' }] }

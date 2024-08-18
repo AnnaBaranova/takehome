@@ -5,6 +5,8 @@ require_relative '../helpers/file_helper'
 require_relative '../processors/data_processor'
 require_relative '../helpers/error_helper'
 
+# Test suite for Challenge script - main entry point
+
 RSpec.describe 'Challenge' do
   before do
     allow(Helpers::JsonHelper).to receive(:load_json).with('users.json').and_return(users)

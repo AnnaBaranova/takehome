@@ -5,6 +5,8 @@ require_relative '../../helpers/data_validator'
 require_relative '../../models/company'
 require_relative '../../processors/company_processor'
 
+# Test suite for CompanyProcessor
+
 RSpec.describe CompanyProcessor do
   let(:user_processor) { instance_double(UserProcessor) }
   let(:company_processor) { described_class.new(user_processor) }
