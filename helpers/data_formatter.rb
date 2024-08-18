@@ -12,6 +12,7 @@ module Helpers
         return [] unless company_id
 
         output = []
+        output << ""
         output << "\tCompany Id: #{company_id}"
         output << "\tCompany Name: #{company_name}" if company_name
 

@@ -9,7 +9,7 @@ class DataProcessor
   def initialize(companies, users)
     @companies = Helpers::DataValidator.validate_data_structure(companies, 'companies').sort_by { |company| company['id'] }
     @user_processor = UserProcessor.new(users)
-    @company_processor = CompanyProcessor.new(@user_processor) # nik: why is this not initialized with companies?
+    @company_processor = CompanyProcessor.new(@user_processor)
   end
 
   def process_all_companies

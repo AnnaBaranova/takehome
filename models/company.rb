@@ -9,7 +9,6 @@ class Company
     #convert the hash keys to symbols and assign to instance variables
     company = attributes.transform_keys(&:to_sym)
 
-    # nik: are these default values?
     @id = company[:id]
     @name = company[:name] || 'unknown'
     @email_status = company[:email_status] || false

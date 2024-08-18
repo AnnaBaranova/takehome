@@ -10,16 +10,15 @@ class User
     #convert the hash keys to symbols and assign to instance variables
     user = attributes.transform_keys(&:to_sym)
 
-    # nik: default values?
     @id = user[:id]
-    @first_name = user[:first_name]
-    @last_name = user[:last_name]
-    @full_name = full_name
-    @email = user[:email]
-    @company_id = user[:company_id]
-    @email_status = user[:email_status]
-    @active_status = user[:active_status]
-    @tokens = user[:tokens]
+    @first_name = user[:first_name] || 'unknown'
+    @last_name = user[:last_name] || 'unknown'
+    @full_name = full_name 
+    @email = user[:email] || 'unknown'
+    @company_id = user[:company_id] || 'unknown'
+    @email_status = user[:email_status] || false
+    @active_status = user[:active_status] || false
+    @tokens = user[:tokens] || 0
   end
 
   def formatted_user_info(previous_balance, new_balance)
